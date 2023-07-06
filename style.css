@@ -69,6 +69,13 @@ nav {
   position: fixed;
   z-index: 100;
   padding-top: 20px;
+  transition: all 500ms ease;
+}
+
+nav.scrolled {
+  background-color: var(--dark-color);
+  box-shadow: 0 16px 14 px -8px rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 8px 8px;
 }
 
 nav .logo {
@@ -138,6 +145,10 @@ nav ul li a {
 }
 
 /* Achievement Cards */
+
+.achivement-cards{
+  display: none;
+}
 
 .achievement-card {
   position: absolute;
@@ -210,15 +221,349 @@ section {
 }
 
 h2 {
-  color: #023047;
+  color: var(--dark-blue-color);
   font-size: 60px;
-  font-family: "Raleway" , sans-serif;
+  font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: 900;
   line-height: 120%;
 }
 
-
-h2.light{
+h2.light {
   color: white;
+}
+
+section p {
+  color: #023047;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 200%;
+  margin: 12px 0;
+}
+
+.testemonial-section {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+
+.testemonial-section .mobile-btn {
+  display: none;
+}
+
+.testemonial-section .testemonial-card {
+  width: 442px;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0px 9px 36px 0px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+
+  position: relative;
+}
+
+.testemonial-section .testemonial-card::before {
+  content: "";
+  width: 28px;
+  position: absolute;
+  height: 40px;
+  top: -40px;
+  left: 60px;
+  background-color: var(--dark-blue-color);
+  border-radius: 24px 24px 0 0;
+  flex-shrink: 0;
+}
+
+.testemonial-section .testemonial-card:last-child::before {
+  left: 40px;
+  top: -50px;
+  border-radius: 0 0 24px 24px;
+  height: calc(100% + 90px);
+  z-index: -1;
+}
+
+.testemonial-section .testemonial-card .content {
+  color: #fff;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  line-height: 150%;
+
+  border-radius: 24px;
+  padding: 24px 32px;
+  background-color: var(--light-blue-color);
+}
+
+.testemonial-section .testemonial-card:last-child .content {
+  background-color: var(--orange-color);
+}
+
+.testemonial-section .testemonial-card .info h4 {
+  color: var(--dark-blue-color);
+  font-size: 24px;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 120%;
+
+  margin: 0;
+}
+
+.testemonial-section .testemonial-card .info {
+  padding: 24px 32px;
+  background-color: white;
+  border-radius: 24px;
+}
+
+.testemonial-section .testemonial-card .info p .company {
+  color: #023047;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.testemonial-section .testemonial-card img {
+  width: 120px;
+  height: 120px;
+
+  position: absolute; /*this is how u postion stuff inside div*/
+  right: 32px;
+  bottom: 20px;
+}
+
+.testemonial-section .testemonial-card:last-child {
+  transform: translateX(20px);
+}
+
+.testemonial-section .features {
+  margin-bottom: 30px;
+}
+
+/*Courses Sectiuon*/
+
+.course-section {
+  background: linear-gradient(180deg, #6f7dfb 0%, #26308c 100%);
+  padding: 70px 0;
+  padding-bottom: 120px;
+}
+
+.course-section h2 {
+  text-align: center;
+}
+
+.course-section .course-cards {
+  display: flex;
+  gap: 83px;
+}
+
+.course-section .course-cards .course-card {
+  background-color: white;
+  border-radius: 24px;
+  background: #fff;
+  padding: 0px 32px;
+  position: relative;
+}
+
+.course-section .course-cards .course-card::after {
+  content: "";
+  height: 8px;
+  /* left: 32px;
+    right: 32px; */
+  position: absolute;
+  bottom: 0;
+  align-self: stretch;
+  border-radius: 24px;
+  background: var(--dark-blue-color);
+}
+
+.course-section .course-cards .course-card img {
+  border-radius: 24px;
+}
+
+.course-section .course-cards .course-card .info h3 {
+  color: var(--dark-blue-color);
+  font-size: 30px;
+  font-family: "Raleway", sans-serif;
+}
+
+.course-section .course-cards .course-card .info {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between; /*take note that it makes stuff side by side*/
+  align-items: center;
+}
+
+.course-section .course-cards .course-card .info .duration {
+  white-space: nowrap;
+  color: var(--dark-blue-color);
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  line-height: 150%;
+
+  position: relative;
+  padding-left: 20px;
+}
+
+/*adding another img before text !!*/
+.course-section .course-cards .course-card .duration::before {
+  content: url("images/Clock.svg");
+
+  position: absolute;
+  top: 2px;
+  left: -6px;
+}
+
+.wrapper{
+  width: 100%;
+}
+
+.course-section .wrapper {
+  position: relative;
+}
+.course-section .wrapper .btn {
+  position: absolute;
+  right: -110px;
+  margin-top: 20px;
+}
+
+/*APP SECTION*/
+
+.app-section {
+  text-align: center;
+}
+.app-section .app-buttons {
+  display: flex;
+  justify-content: center; /*the whole div*/
+  align-items: center; /*inside div*/
+  gap: 30px;
+  margin-top: 25px;
+}
+.app-section .app-btn {
+  display: flex;
+
+  width: 310px;
+  padding: 20px 31px;
+  align-items: center;
+  gap: 14px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 200%;
+}
+
+/*FOOTER*/
+footer {
+  background-color: var(--dark-color);
+  margin-top: 100px;
+  padding: 70px 0;
+}
+footer .links-container {
+  display: grid;
+  grid-template-columns: 2fr 2fr 3fr;
+  justify-content: space-between; /*the whole div*/
+  align-items: center; /*inside div*/
+}
+
+footer .links-container .links h3 {
+  color: var(--orange-color);
+  text-align: center;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 200%;
+  text-align: left;
+}
+footer a {
+  color: #fff;
+  font-size: 16px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 200%;
+  text-decoration: none;
+}
+
+footer ul li {
+  margin: 16px 0;
+}
+
+footer .social {
+  margin-left: 40px;
+}
+
+footer .social a {
+  margin-right: 28px;
+}
+
+footer form {
+  margin-left: 20px;
+  margin-top: 16px;
+  position: relative;
+}
+footer form input {
+  color: #000;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 200%;
+  border-radius: 8px;
+  background: #fff;
+  width: 100%;
+}
+
+footer form .submit-btn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 8px;
+  background: #023047;
+  width: 135px;
+  height: 30px;
+  flex-shrink: 0;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 200%;
+  align-items: center;
+  padding: -40px 32px;
+  border: 0;
+  cursor: pointer;
+}
+
+footer .copyright {
+  margin-top: 36px;
+  color: #fff;
+  font-size: 16px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 200%;
+}
+
+
+@media(max-width:1100px){
+  .btn{
+    padding: 12px 32px;
+  }
+  .wrapper{
+    padding: 0 100px;
+  }
+  nav{
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
 }
